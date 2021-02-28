@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'unidad-medida',
+    loadChildren: () => import('./screens/unidad-medida/unidad-medida.module').then( m => m.UnidadMedidaPageModule)
+  },
+  {
+    path: 'unidad-medida-form',
+    loadChildren: () => import('./screens/unidadMedida/unidad-medida-form/unidad-medida-form.module').then( m => m.UnidadMedidaFormPageModule)
+  },
+  {
+    path: 'unidad-medida-form/:codigo',
+    loadChildren: () => import('./screens/unidadMedida/unidad-medida-form/unidad-medida-form.module').then( m => m.UnidadMedidaFormPageModule)
+  }
 ];
 
 @NgModule({

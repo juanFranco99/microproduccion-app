@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/unidad-medida"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Unidad De Medida</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Unidad</ion-label>
+        <ion-input  [(ngModel)]="unidadMedida.unidad" type="text" placeholder="Unidad" required="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Simbolo</ion-label>
+        <ion-input [(ngModel)]="unidadMedida.simbolo" type="text" placeholder="Simbolo" required="true"></ion-input>
+      </ion-item>
+
+      <ion-button (click)="isModoEdicion ? updateUnidadMedida() : addUnidadMedida(unidadMedida.unidad, unidadMedida.simbolo) " expand="block"  shape="round">
+        <ion-icon slot="start" name="save"></ion-icon>
+        Guardar
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
