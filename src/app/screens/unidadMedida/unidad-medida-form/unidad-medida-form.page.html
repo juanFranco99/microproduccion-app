@@ -12,22 +12,34 @@
     <ion-card-header>
       <ion-card-title>{{title}}</ion-card-title>
     </ion-card-header>
+
     <ion-card-content>
       <ion-item>
         <ion-label position="floating">Unidad</ion-label>
-        <ion-input  [(ngModel)]="unidadMedida.unidad" type="text" placeholder="Unidad" required="true"></ion-input>
+        <ion-input
+          [(ngModel)]="unidadMedida.unidad"
+          type="text"
+          placeholder="Unidad"
+          required="true"
+        ></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Simbolo</ion-label>
-        <ion-input [(ngModel)]="unidadMedida.simbolo" type="text" placeholder="Simbolo" required="true"></ion-input>
+        <ion-input
+          [(ngModel)]="unidadMedida.simbolo"
+          type="text"
+          placeholder="Simbolo"
+          required="true"
+        ></ion-input>
       </ion-item>
-
-      <ion-button (click)="isModoEdicion ? updateUnidadMedida() : addUnidadMedida(unidadMedida.unidad, unidadMedida.simbolo) " expand="block"  shape="round">
-        <ion-icon slot="start" name="save"></ion-icon>
-        Guardar
-      </ion-button>
 
     </ion-card-content>
   </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="isModoEdicion ? updateUnidadMedida() : addUnidadMedida(unidadMedida.unidad, unidadMedida.simbolo) ">
+      <ion-icon name="save"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'unidad-medida-form',
-    loadChildren: () => import('../unidadMedida/unidad-medida-form/unidad-medida-form.module').then( m => m.UnidadMedidaFormPageModule)
+    loadChildren: () => import('../unidad-medida-form/unidad-medida-form.module').then( m => m.UnidadMedidaFormPageModule)
   }
 ];
 

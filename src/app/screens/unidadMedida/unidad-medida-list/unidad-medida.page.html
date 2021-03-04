@@ -7,14 +7,18 @@
 <ion-content>
   <ion-list *ngFor="let unidad of unidades">
     <ion-item>
+
       <ion-label>{{unidad.unidad}} ({{unidad.simbolo}})</ion-label>
+
       <ion-button [routerLink]="['../unidad-medida-form', unidad.codigo]" expand="block" fill="clear" shape="round">
         <ion-icon name="create-outline"></ion-icon>
       </ion-button>
+
       <ion-button (click)="msgDelete(unidad.codigo)"  [disabled]="false" expand="block" fill="clear" shape="round">
         <ion-icon color="danger" name="trash-outline"></ion-icon>
       </ion-button>
     </ion-item>
+    
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

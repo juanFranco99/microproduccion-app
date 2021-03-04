@@ -26,25 +26,7 @@ export class UnidadMedidaFormPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.actiavtedRoute.paramMap.subscribe((paramMap) => {
-      const codigo = paramMap.get('codigo');
-
-      if (codigo) {
-        this.isModoEdicion = true;
-        this.title = "Editar Unidad De Medida";
-        this.unidadMedidaService.getUnidadMedida(codigo)
-          .subscribe(
-            (res) => {
-              this.unidadMedida = res;
-            },
-            (err) => {
-              console.error(err)
-            }
-          )
-      } else {
-        this.title = "Crear Unidad de Medida";
-      }
-    })
+     this.onInicializar();
   }
 
   addUnidadMedida(unidad: string, simbolo: string) {
@@ -72,8 +54,32 @@ export class UnidadMedidaFormPage implements OnInit {
     );
   }
 
+
+
   returnToList() {
     this.router.navigate(["/unidad-medida"]);
+  }
+  
+  onInicializar(){
+    this.actiavtedRoute.paramMap.subscribe((paramMap) => {
+      const codigo = paramMap.get('codigo');
+
+      if (codigo) {
+        this.isModoEdicion = true;
+        this.title = "Editar Unidad De Medida";
+        this.unidadMedidaService.getUnidadMedida(codigo)
+          .subscribe(
+            (res) => {
+              this.unidadMedida = res;
+            },
+            (err) => {
+              console.error(err)
+            }
+          )
+      } else {
+        this.title = "Crear Unidad de Medida";
+      }
+    })
   }
 
 }

@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'unidad-medida',
-    loadChildren: () => import('./screens/unidad-medida/unidad-medida.module').then( m => m.UnidadMedidaPageModule)
+    loadChildren: () => import('./screens/unidadMedida/unidad-medida-list/unidad-medida.module').then( m => m.UnidadMedidaPageModule)
   },
   {
     path: 'unidad-medida-form',
@@ -22,7 +22,16 @@ const routes: Routes = [
   {
     path: 'unidad-medida-form/:codigo',
     loadChildren: () => import('./screens/unidadMedida/unidad-medida-form/unidad-medida-form.module').then( m => m.UnidadMedidaFormPageModule)
+  },
+  {
+    path: 'embalaje-list',
+    loadChildren: () => import('./screens/embalaje/embalaje-list/embalaje-list.module').then( m => m.EmbalajeListPageModule)
+  },
+  {
+    path: 'embalaje-form/:codigo',
+    loadChildren: () => import('./screens/embalaje/embalaje-form/embalaje-form.module').then( m => m.EmbalajeFormPageModule)
   }
+
 ];
 
 @NgModule({
